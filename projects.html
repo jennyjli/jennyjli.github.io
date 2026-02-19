@@ -19,76 +19,79 @@
     <h1>Projects</h1>
 
     <div class="project">
-      <div class="meta"><span class="badge">WIP</span> &nbsp; Multimodal collector tooling</div>
-      <h2>Multimodal Collector Agent</h2>
+      <div class="meta"><span class="badge">Prototype</span> &nbsp; Multimodal + retrieval + agent UX</div>
+      <h2>Anime Goods Agent</h2>
+
       <p>
-        An AI assistant that turns an image of anime merchandise into actionable search
-        and purchase paths. The agent generates likely Japanese and English keywords,
-        builds marketplace search links on trusted collector platforms, and returns
-        structured results users can act on immediately.
+        A multimodal agent that turns an image of anime merchandise into structured search actions on
+        trusted Japanese marketplaces. Upload an image and the agent identifies likely series/character/item type,
+        generates Japanese collector-style keywords, and returns ranked results with direct links.
       </p>
-      <img src="animegoodsdemo.gif" alt="Multimodal Collector Agent demo" style="max-width: 100%; margin: 1rem 0;">
-      <p class="meta">Demo</p>
 
-      <div class="section-title">Problem</div>
-      <p class="meta">Current workflows are manual and noisy — identifying items, guessing Japanese names, and searching multiple marketplaces separately.</p>
+      <p class="meta">
+        Demo:
+      </p>
 
-      <div class="section-title">Key challenges</div>
+      <div style="margin: 20px 0;">
+        <img src="animegoodsdemo.gif" alt="Anime Goods Agent Demo"
+             style="width:100%; max-width:720px; border-radius:8px; border:1px solid #ddd;">
+      </div>
+
+      <div class="section-title">Pain points</div>
       <ul>
-        <li>Language gap — listings primarily in Japanese</li>
-        <li>Unknown terminology — collectors lack official product names</li>
-        <li>Noisy retrieval — broad visual search returns irrelevant sources</li>
-        <li>Fragmented marketplaces — trusted sites must be searched individually</li>
-        <li>High friction for rare items — small keyword differences hide listings</li>
+        <li><strong>Language gap</strong> — listings are primarily in Japanese</li>
+        <li><strong>Unknown terminology</strong> — you often don’t know the official product name or collector keywords</li>
+        <li><strong>Noisy discovery</strong> — broad visual search mixes social posts and unrelated sources</li>
+        <li><strong>Fragmented marketplaces</strong> — trusted sites must be searched separately</li>
+        <li><strong>High friction for rare items</strong> — small keyword differences can hide the only listing</li>
       </ul>
 
-      <div class="section-title">What the agent does</div>
+      <div class="section-title">What’s built (current)</div>
       <ul>
-        <li>Understand the visual content of merchandise</li>
-        <li>Generate likely Japanese and English search keywords</li>
-        <li>Construct marketplace searches on trusted collector platforms</li>
-        <li>Return structured, actionable results (keywords + links)</li>
+        <li><strong>Gemini 2.5 image analysis</strong> → series, character, item type + reasoning trace</li>
+        <li><strong>Keyword grounding</strong> → Japanese collector-style keywords optimized for listings</li>
+        <li><strong>Scoped web search via Serper.dev</strong> → restricted to Mercari and Surugaya</li>
+        <li><strong>Result cleaning + ranking</strong> → price, condition, availability extraction</li>
+        <li><strong>Agent trace UI</strong> → transparent step-by-step reasoning display</li>
       </ul>
 
-      <div class="section-title">Output example</div>
-      <table class="project-table">
-        <thead>
-          <tr><th>Keyword</th><th>Marketplace</th><th>Search Link</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>ハンターハンター VHS 特典カード</td>
-            <td>Mercari</td>
-            <td><a href="#">link</a></td>
-          </tr>
-          <tr>
-            <td>Hunter x Hunter postcard 1999</td>
-            <td>Surugaya</td>
-            <td><a href="#">link</a></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="section-title">Example Output</div>
 
-      <div class="section-title">Why this project</div>
-      <p>
-        Connects professional interests in multimodal AI with a personal collecting workflow — grounding visual inputs into usable concepts and generating actionable queries.
-      </p>
+      <p class="meta">Generated keywords:</p>
+      <div style="margin: 16px 0;">
+        <img src="keywords.png" alt="Generated Japanese Keywords"
+             style="width:100%; max-width:720px; border-radius:8px; border:1px solid #ddd;">
+      </div>
+
+      <p class="meta">Marketplace search results:</p>
+      <div style="margin: 16px 0;">
+        <img src="searchresults.png" alt="Marketplace Search Results"
+             style="width:100%; max-width:720px; border-radius:8px; border:1px solid #ddd;">
+      </div>
 
       <div class="section-title">Roadmap</div>
-      <p class="meta">MVP (Hackathon scope)</p>
+
+      <p class="meta"><strong>MVP (current scope)</strong></p>
       <ul>
-        <li>Image upload → visual understanding → item description</li>
-        <li>Keyword generation (JP + EN)</li>
-        <li>Marketplace search link generation</li>
-        <li>Structured result table</li>
+        <li>Image upload → multimodal identification (Gemini 2.5)</li>
+        <li>Japanese keyword generation for collector listings</li>
+        <li>Marketplace retrieval via Serper.dev (Mercari + Surugaya only)</li>
+        <li>Ranked results table + transparent agent trace</li>
       </ul>
 
-      <div class="meta">North star: a multimodal agent that continuously understands visual inputs, tracks rare items, and bridges discovery → acquisition.</div>
+      <p class="meta"><strong>Milestones</strong></p>
+      <ul>
+        <li><strong>Phase 1 — Visual grounding augmentation</strong>: integrate Lens-style visual search to retrieve visually similar matches, use them to refine keywords, and surface exact / near-exact match results separately in the UI.</li>
+        <li><strong>Phase 2 — Retrieval awareness</strong>: better availability inference, duplicate suppression, improved condition parsing, and structured query expansion (e.g., 特典 / 非売品 variants).</li>
+        <li><strong>Phase 3 — Collector assistance</strong>: refine by text intent (“same illustration”), support artwork variants, lightweight listing monitoring, and optional historical price estimation.</li>
+      </ul>
+
+      <p class="meta">
+        <strong>North star:</strong> a multimodal collector companion that uses visual retrieval + language grounding jointly,
+        reduces discovery → acquisition friction, and supports longer-horizon workflows.
+      </p>
     </div>
 
-
-    
   </main>
-
 </body>
 </html>
