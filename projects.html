@@ -19,6 +19,72 @@
   <main class="container">
     <h1>Projects</h1>
 
+    <div class="project">
+      <div class="meta"><span class="badge">WIP</span> &nbsp; Multimodal collector tooling</div>
+      <h2>Multimodal Collector Agent</h2>
+      <p>
+        An AI assistant that turns an image of anime merchandise into actionable search
+        and purchase paths. The agent generates likely Japanese and English keywords,
+        builds marketplace search links on trusted collector platforms, and returns
+        structured results users can act on immediately.
+      </p>
+
+      <div class="section-title">Problem</div>
+      <p class="meta">Current workflows are manual and noisy — identifying items, guessing Japanese names, and searching multiple marketplaces separately.</p>
+
+      <div class="section-title">Key challenges</div>
+      <ul>
+        <li>Language gap — listings primarily in Japanese</li>
+        <li>Unknown terminology — collectors lack official product names</li>
+        <li>Noisy retrieval — broad visual search returns irrelevant sources</li>
+        <li>Fragmented marketplaces — trusted sites must be searched individually</li>
+        <li>High friction for rare items — small keyword differences hide listings</li>
+      </ul>
+
+      <div class="section-title">What the agent does</div>
+      <ul>
+        <li>Understand the visual content of merchandise</li>
+        <li>Generate likely Japanese and English search keywords</li>
+        <li>Construct marketplace searches on trusted collector platforms</li>
+        <li>Return structured, actionable results (keywords + links)</li>
+      </ul>
+
+      <div class="section-title">Output example</div>
+      <table class="project-table">
+        <thead>
+          <tr><th>Keyword</th><th>Marketplace</th><th>Search Link</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ハンターハンター VHS 特典カード</td>
+            <td>Mercari</td>
+            <td><a href="#">link</a></td>
+          </tr>
+          <tr>
+            <td>Hunter x Hunter postcard 1999</td>
+            <td>Surugaya</td>
+            <td><a href="#">link</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">Why this project</div>
+      <p>
+        Connects professional interests in multimodal AI with a personal collecting workflow — grounding visual inputs into usable concepts and generating actionable queries.
+      </p>
+
+      <div class="section-title">Roadmap</div>
+      <p class="meta">MVP (Hackathon scope)</p>
+      <ul>
+        <li>Image upload → visual understanding → item description</li>
+        <li>Keyword generation (JP + EN)</li>
+        <li>Marketplace search link generation</li>
+        <li>Structured result table</li>
+      </ul>
+
+      <div class="meta">North star: a multimodal agent that continuously understands visual inputs, tracks rare items, and bridges discovery → acquisition.</div>
+    </div>
+
     <div class="card">
       <h2>Conversation State Explorer (WIP)</h2>
       <p>

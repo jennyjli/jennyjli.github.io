@@ -77,6 +77,63 @@ nav a.active {
   margin-bottom: 16px;
 }
 
+.project {
+  padding: 18px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  box-shadow: 0 4px 14px rgba(12,17,26,0.06);
+  margin-bottom: 20px;
+  border: 1px solid rgba(12,17,26,0.04);
+}
+
+.project .meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.project h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+}
+
+.project p {
+  margin: 8px 0;
+}
+
+.project .section-title {
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.project-table th, .project-table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(12,17,26,0.06);
+}
+
+.project-table th {
+  background: rgba(3,102,214,0.03);
+  font-weight: 700;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(3,102,214,0.08);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
 ul.clean {
   padding-left: 1.05rem;
 }
