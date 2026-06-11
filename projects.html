@@ -36,6 +36,7 @@
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: none;
     }
+    body.projects .project strong { color: #b6dbff; font-weight: 600; }
     body.projects .section-title { color: #e7eefb; }
     body.projects .badge { background: rgba(140,198,255,0.16); color: #bfe0ff; }
     body.projects ul li { color: #cfd8e8; }
@@ -95,7 +96,22 @@
       <p>
         Enter any unfamiliar concept. Lattice generates a personalized visual explanation, prerequisite concepts, and a learning path tailored to the user's existing knowledge.
       </p>
+      <div class="section-title">Visualizations</div>
 
+      <div id="lattice-crispr" class="viz">
+        <div class="viz-title">CRISPR-Cas9</div>
+        <div class="viz-stage" style="aspect-ratio: 1000 / 470;"></div>
+        <div class="viz-caption"></div>
+      </div>
+      <p class="meta viz-desc">
+        <strong>CRISPR</strong> — how Cas9 finds one target gene by guide-RNA base-pairing and cuts it,
+        animated as a step-by-step editing process.
+      </p>
+
+      <div id="lattice-aizawa" class="viz viz-3d"></div>
+      <p class="meta viz-desc">
+        <strong>Aizawa attractor</strong> — a chaotic system that demonstrates how simple rules can produce infinitely intricate patterns. Visualizing the particle trajectories reveals the hidden structure beneath deterministic chaos, showing why we can't predict individual paths even when the rules are perfectly known.
+      </p>
       <div class="section-title">Knowledge Atlas</div>
 
       <p>
@@ -130,26 +146,6 @@
 
       <p class="meta"><strong>North Star:</strong> An AI system that remembers a person's cognitive journey and helps them build understanding over a lifetime.</p>
 
-      <p class="meta">
-        <a href="https://github.com/jennyjli/lattice">GitHub</a>
-      </p>
-
-      <div class="section-title">Visualizations</div>
-
-      <div id="lattice-crispr" class="viz">
-        <div class="viz-title">CRISPR-Cas9</div>
-        <div class="viz-stage" style="aspect-ratio: 1000 / 470;"></div>
-        <div class="viz-caption"></div>
-      </div>
-      <p class="meta viz-desc">
-        <strong>CRISPR</strong> — how Cas9 finds one target gene by guide-RNA base-pairing and cuts it,
-        animated as a step-by-step editing process.
-      </p>
-
-      <div id="lattice-aizawa" class="viz viz-3d"></div>
-      <p class="meta viz-desc">
-        <strong>Aizawa attractor</strong> — a chaotic system that demonstrates how simple rules can produce infinitely intricate patterns. Visualizing the particle trajectories reveals the hidden structure beneath deterministic chaos, showing why we can't predict individual paths even when the rules are perfectly known.
-      </p>
     </div>
 
     <div class="project">
