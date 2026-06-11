@@ -58,21 +58,77 @@
     <div class="project">
       <h2>Lattice</h2>
 
-      <p>
-        A learning companion that explains any concept and <em>shows</em> it. For a question like
-        “How does CRISPR work?”, Lattice generates a personalized written explanation and a fitting
-        visualization. The core is an LLM “director”: instead of hand-coding each visual, a model emits
-        a small declarative spec (actors + a timeline, or a particle / parametric scene description) that
-        a single renderer plays — so it generalizes across concepts and domains.
+      <p class="meta" style="font-style: italic; margin-bottom: 1.5em;">
+        Most explanations start with definitions. Real understanding starts with context.
       </p>
 
       <p>
-        Three rendering paths cover most concepts: <strong>process animations</strong> (an eased,
-        camera-driven 2D player that shows mechanisms step by step), <strong>particle scenes</strong>
-        (glowing point clouds for things that <em>are</em> points — galaxies, strange attractors), and
-        <strong>parametric 3D models</strong> (real geometry for structures, e.g. the Colosseum). The
-        three pieces below run live, right on this page.
+        Lattice helps users explore unfamiliar concepts through visual explanations, prerequisite ideas, and conceptual relationships. Concepts can be saved into a personal Knowledge Atlas, creating a lasting record of what they've learned and how their understanding has evolved.
       </p>
+
+      <div class="section-title">Why I Built It</div>
+
+      <p>
+        When we encounter an unfamiliar concept, we usually don't just want a definition. We want to understand:
+      </p>
+
+      <ul>
+        <li>Why does this matter?</li>
+        <li>What should I know first?</li>
+        <li>How does this connect to things I already understand?</li>
+      </ul>
+
+      <p>
+        Most AI tools answer questions in isolation. Lattice explores a different direction.
+      </p>
+
+      <p>
+        The Concept Studio turns unfamiliar ideas into visual explanations that reveal the mechanisms, relationships, and prerequisite concepts behind them. The Knowledge Atlas preserves those discoveries over time, creating a personal record of concepts explored, connections made, and understanding gained.
+      </p>
+
+      <p>
+        Instead of helping users collect information, Lattice is designed to help them build understanding.
+      </p>
+
+      <div class="section-title">Concept Studio</div>
+
+      <p>
+        Enter any unfamiliar concept. Lattice generates a personalized visual explanation, prerequisite concepts, and a learning path tailored to the user's existing knowledge.
+      </p>
+
+      <div class="section-title">Knowledge Atlas</div>
+
+      <p>
+        Users can save concepts they understand. Unlike traditional note-taking systems, Lattice has no folders, no manual organization, and no tagging. Lattice automatically organizes concepts into domains and tracks learning progress over time.
+      </p>
+
+      <p>
+        Each concept stores its visual explanation, learning history, familiarity score, and related concepts. The goal is not to remember information. The goal is to remember understanding.
+      </p>
+
+      <div class="section-title">Technical Highlights</div>
+
+      <ul>
+        <li>GPT-powered concept decomposition</li>
+        <li>Personalized retrieval using a user knowledge graph</li>
+        <li>Concept relationship graph construction</li>
+        <li>Dynamic visualization generation</li>
+        <li>Long-term cognitive state tracking</li>
+        <li>Next.js + TypeScript + FastAPI + PostgreSQL</li>
+      </ul>
+
+      <div class="section-title">Roadmap</div>
+
+      <p class="meta"><strong>Phase 1 — Concept Studio</strong></p>
+      <p>Generate interactive visual explanations for unfamiliar concepts.</p>
+
+      <p class="meta"><strong>Phase 2 — Knowledge Atlas</strong></p>
+      <p>Build a persistent model of user understanding.</p>
+
+      <p class="meta"><strong>Phase 3 — Context-Aware Learning</strong></p>
+      <p>Adapt explanations and recommendations based on prior learning history.</p>
+
+      <p class="meta"><strong>North Star:</strong> An AI system that remembers a person's cognitive journey and helps them build understanding over a lifetime.</p>
 
       <p class="meta">
         <a href="https://github.com/jennyjli/lattice">GitHub</a>
