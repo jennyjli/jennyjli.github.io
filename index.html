@@ -5,8 +5,50 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Jenny Li</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Home "space" theme (scoped to body.home; Projects page unaffected) ── */
+    body.home {
+      background: radial-gradient(1200px 820px at 72% -12%, #0b1430 0%, #05060a 62%);
+      color: #d7e0f0;
+    }
+    #galaxy-bg { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+
+    body.home a { color: #8cc6ff; }
+    body.home a:hover { color: #b6dbff; }
+    body.home h1, body.home h2, body.home strong { color: #f2f6ff; }
+    body.home .tagline { color: #9fb0cf; }
+
+    body.home nav a { color: #c7d2e6; }
+    body.home nav a:hover { background: rgba(255,255,255,0.08); }
+    body.home nav a.active { background: rgba(140,198,255,0.18); color: #cfe6ff; }
+
+    /* Hero header */
+    body.home .site-header { margin-bottom: 40px; }
+    body.home .site-header h1 {
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      line-height: 1.05;
+      background: linear-gradient(180deg, #ffffff, #b9c6e6);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    body.home .tagline { font-size: 1.15rem; margin-top: 6px; }
+
+    /* Frosted-glass content card floating over the galaxy */
+    body.home .container {
+      background: rgba(10, 14, 26, 0.55);
+      backdrop-filter: blur(14px) saturate(125%);
+      -webkit-backdrop-filter: blur(14px) saturate(125%);
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.5);
+      color: #d7e0f0;
+      padding: 34px;
+    }
+    body.home hr { opacity: 1 !important; border: none; border-top: 1px solid rgba(255,255,255,0.12); }
+    body.home .clean li { margin: 4px 0; }
+  </style>
 </head>
-<body>
+<body class="home">
+  <div id="galaxy-bg" aria-hidden="true"></div>
   <header class="site-header">
     <div>
       <h1>Hi, I’m Jenny.</h1>
@@ -83,5 +125,14 @@
 </p>
 </main>
 
+  <!-- Rotating galaxy background (self-contained; three.js via CDN) -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+  <script type="module" src="viz/galaxy.js"></script>
 </body>
 </html>
