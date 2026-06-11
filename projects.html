@@ -7,8 +7,11 @@
   <link rel="stylesheet" href="style.css">
   <style>
     /* ── Projects "space" theme (scoped to body.projects) ── */
+    /* Gradient goes on <html> (painted behind everything); body is transparent
+       so it doesn't cover the z-index:-1 lattice canvas. */
+    html { background: radial-gradient(1100px 780px at 50% -12%, #0b1430 0%, #05060a 62%) fixed; }
     body.projects {
-      background: radial-gradient(1100px 780px at 50% -12%, #0b1430 0%, #05060a 62%);
+      background: transparent;
       color: #d7e0f0;
     }
     #lattice-bg { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
@@ -61,14 +64,25 @@
 
     body.projects .section-title {
       text-transform: uppercase;
-      font-size: 0.74rem;
-      letter-spacing: 0.12em;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
       font-weight: 700;
-      color: #7fc1ff;
-      margin-top: 30px;
+      color: #8fccff;
+      margin-top: 32px;
       margin-bottom: 12px;
-      padding-bottom: 7px;
-      border-bottom: 1px solid rgba(140,198,255,0.20);
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(140,198,255,0.22);
+    }
+    /* One level smaller than a section title (e.g. "Visualizations" under
+       Concept Studio). */
+    body.projects .sub-title {
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: #8aa6cc;
+      margin-top: 22px;
+      margin-bottom: 10px;
     }
     body.projects .project ul { margin: 10px 0; padding-left: 1.15rem; }
     body.projects .project ul li { color: #cdd8ec; margin: 6px 0; }
@@ -131,7 +145,7 @@
       <p>
         Enter any unfamiliar concept. Lattice generates a personalized visual explanation, prerequisite concepts, and a learning path tailored to the user's existing knowledge.
       </p>
-      <div class="section-title">Visualizations</div>
+      <div class="sub-title">Visualizations</div>
 
       <div id="lattice-crispr" class="viz">
         <div class="viz-title">CRISPR-Cas9</div>

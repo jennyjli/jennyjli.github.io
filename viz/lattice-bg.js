@@ -30,7 +30,7 @@ if (host) {
   host.appendChild(renderer.domElement);
 
   // Build an n×n×n grid of nodes.
-  const n = 8, spacing = 80, half = ((n - 1) * spacing) / 2;
+  const n = 8, spacing = 92, half = ((n - 1) * spacing) / 2;
   const nodes = [];
   for (let i = 0; i < n; i++)
     for (let j = 0; j < n; j++)
@@ -45,8 +45,8 @@ if (host) {
   const ngeo = new THREE.BufferGeometry();
   ngeo.setAttribute('position', new THREE.BufferAttribute(npos, 3));
   const nmat = new THREE.PointsMaterial({
-    map: glowTexture(), color: '#9ad8ff', size: 10, sizeAttenuation: true,
-    blending: THREE.AdditiveBlending, transparent: true, opacity: 0.95, depthWrite: false,
+    map: glowTexture(), color: '#bfe6ff', size: 13, sizeAttenuation: true,
+    blending: THREE.AdditiveBlending, transparent: true, opacity: 1.0, depthWrite: false,
   });
 
   // Edges — faint lines to neighbours (these make the rotation obvious).
@@ -62,7 +62,7 @@ if (host) {
   const lgeo = new THREE.BufferGeometry();
   lgeo.setAttribute('position', new THREE.Float32BufferAttribute(segs, 3));
   const lmat = new THREE.LineBasicMaterial({
-    color: '#38bdf8', transparent: true, opacity: 0.22,
+    color: '#4cc4ff', transparent: true, opacity: 0.4,
     blending: THREE.AdditiveBlending, depthWrite: false,
   });
 
