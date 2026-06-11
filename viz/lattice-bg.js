@@ -45,8 +45,8 @@ if (host) {
   const ngeo = new THREE.BufferGeometry();
   ngeo.setAttribute('position', new THREE.BufferAttribute(npos, 3));
   const nmat = new THREE.PointsMaterial({
-    map: glowTexture(), color: '#9ad8ff', size: 9, sizeAttenuation: true,
-    blending: THREE.AdditiveBlending, transparent: true, opacity: 0.8, depthWrite: false,
+    map: glowTexture(), color: '#9ad8ff', size: 10, sizeAttenuation: true,
+    blending: THREE.AdditiveBlending, transparent: true, opacity: 0.95, depthWrite: false,
   });
 
   // Edges — faint lines to neighbours (these make the rotation obvious).
@@ -62,7 +62,7 @@ if (host) {
   const lgeo = new THREE.BufferGeometry();
   lgeo.setAttribute('position', new THREE.Float32BufferAttribute(segs, 3));
   const lmat = new THREE.LineBasicMaterial({
-    color: '#38bdf8', transparent: true, opacity: 0.14,
+    color: '#38bdf8', transparent: true, opacity: 0.22,
     blending: THREE.AdditiveBlending, depthWrite: false,
   });
 
