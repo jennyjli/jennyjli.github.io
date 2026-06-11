@@ -49,6 +49,23 @@
         <div class="viz-stage" style="aspect-ratio: 1000 / 470;"></div>
         <div class="viz-caption"></div>
       </div>
+      <p class="meta viz-desc">
+        <strong>CRISPR</strong> — how Cas9 finds one target gene by guide-RNA base-pairing and cuts it,
+        animated as a step-by-step editing process.
+      </p>
+
+      <div id="lattice-lorenz" class="viz viz-3d"></div>
+      <p class="meta viz-desc">
+        <strong>Lorenz attractor</strong> — how three simple equations produce chaotic, never-repeating
+        motion (the "butterfly effect"), traced by 60k particles. Drag to orbit.
+      </p>
+
+      <div id="lattice-aizawa" class="viz viz-3d"></div>
+      <p class="meta viz-desc">
+        <strong>Aizawa attractor</strong> — a different chaotic system whose trajectory winds into a
+        swirled 3D knot. Drag to orbit.
+      </p>
+    </div>
 
     <div class="project">
       <div class="meta"><span class="badge">Prototype</span> &nbsp; Multimodal + retrieval + agent UX</div>
@@ -68,21 +85,59 @@
         <img src="animegoodsdemo.gif" alt="Anime Goods Agent Demo"
              style="width:100%; max-width:720px; border-radius:8px; border:1px solid #ddd;">
       </div>
-      <p class="meta viz-desc">
-        <strong>CRISPR</strong> — how Cas9 finds one target gene by guide-RNA base-pairing and cuts it,
-        animated as a step-by-step editing process.
-      </p>
 
-      <div id="lattice-lorenz" class="viz viz-3d"></div>
-      <p class="meta viz-desc">
-        <strong>Lorenz attractor</strong> — how three simple equations produce chaotic, never-repeating
-        motion (the “butterfly effect”), traced by 60k particles. Drag to orbit.
-      </p>
+      <div class="section-title">Pain points</div>
+      <ul>
+        <li><strong>Language gap</strong> — listings are primarily in Japanese</li>
+        <li><strong>Unknown terminology</strong> — you often don't know the official product name or collector keywords</li>
+        <li><strong>Noisy discovery</strong> — broad visual search mixes social posts and unrelated sources</li>
+        <li><strong>Fragmented marketplaces</strong> — trusted sites must be searched separately</li>
+        <li><strong>High friction for rare items</strong> — small keyword differences can hide the only listing</li>
+      </ul>
 
-      <div id="lattice-aizawa" class="viz viz-3d"></div>
-      <p class="meta viz-desc">
-        <strong>Aizawa attractor</strong> — a different chaotic system whose trajectory winds into a
-        swirled 3D knot. Drag to orbit.
+      <div class="section-title">What's built (current)</div>
+      <ul>
+        <li><strong>Gemini 2.5 image analysis</strong> → series, character, item type + reasoning trace</li>
+        <li><strong>Keyword grounding</strong> → Japanese collector-style keywords optimized for listings</li>
+        <li><strong>Scoped web search via Serper.dev</strong> → restricted to Mercari and Surugaya</li>
+        <li><strong>Result cleaning + ranking</strong> → price, condition, availability extraction</li>
+        <li><strong>Agent trace UI</strong> → transparent step-by-step reasoning display</li>
+      </ul>
+
+      <div class="section-title">Example Output</div>
+
+      <p class="meta">Generated keywords:</p>
+      <div style="margin: 16px 0;">
+        <img src="keywords.png" alt="Generated Japanese Keywords"
+             style="width:100%; max-width:720px; border-radius:8px; border:1px solid #ddd;">
+      </div>
+
+      <p class="meta">Marketplace search results:</p>
+      <div style="margin: 16px 0;">
+        <img src="searchresults.png" alt="Marketplace Search Results"
+             style="width:100%; max-width:720px; border-radius:8px; border:1px solid #ddd;">
+      </div>
+
+      <div class="section-title">Roadmap</div>
+
+      <p class="meta"><strong>MVP (current scope)</strong></p>
+      <ul>
+        <li>Image upload → multimodal identification (Gemini 2.5)</li>
+        <li>Japanese keyword generation for collector listings</li>
+        <li>Marketplace retrieval via Serper.dev (Mercari + Surugaya only)</li>
+        <li>Ranked results table + transparent agent trace</li>
+      </ul>
+
+      <p class="meta"><strong>Milestones</strong></p>
+      <ul>
+        <li><strong>Phase 1 — Visual grounding augmentation</strong>: integrate Lens-style visual search to retrieve visually similar matches, use them to refine keywords, and surface exact / near-exact match results separately in the UI.</li>
+        <li><strong>Phase 2 — Retrieval awareness</strong>: better availability inference, duplicate suppression, improved condition parsing, and structured query expansion (e.g., 特典 / 非売品 variants).</li>
+        <li><strong>Phase 3 — Collector assistance</strong>: refine by text intent ("same illustration"), support artwork variants, lightweight listing monitoring, and optional historical price estimation.</li>
+      </ul>
+
+      <p class="meta">
+        <strong>North star:</strong> a multimodal collector companion that uses visual retrieval + language grounding jointly,
+        reduces discovery → acquisition friction, and supports longer-horizon workflows.
       </p>
     </div>
 
