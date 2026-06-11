@@ -156,3 +156,41 @@ footer {
   margin-top: -8px;
   margin-bottom: 32px;
 }
+/* ── Lattice visualization embeds ───────────────────────────── */
+.viz {
+  margin: 16px 0 4px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(12,17,26,0.08);
+}
+.viz-3d {
+  height: 360px;
+  background: #05060a;
+}
+.viz-3d canvas { display: block; }
+.viz-title {
+  text-align: center;
+  font-weight: 700;
+  color: #0f1724;
+  padding: 10px 0 2px;
+  background: linear-gradient(180deg,#ffffff,#f4f8fd);
+}
+.viz-stage {
+  width: 100%;
+  background: #eef4fb;
+}
+.viz-stage svg { display: block; width: 100%; height: 100%; }
+.viz-caption {
+  height: 3.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #334155;
+  background: linear-gradient(180deg,#f4f8fd,#ffffff);
+  transition: opacity 0.2s;
+}
+.viz-desc { margin-top: 6px !important; }
