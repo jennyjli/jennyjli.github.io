@@ -1,0 +1,26 @@
+// Self-contained CRISPR animation for the projects page.
+// Uses the pure renderFrameSVG() exported from animationFrame.js (no deps).
+import { renderFrameSVG, captionAt } from './animationFrame.js';
+
+const spec = {"title": "CRISPR-Cas9", "subtitle": "Programmable molecular scissors, guided by RNA", "duration": 22.0, "actors": [{"id": "dna", "shape": "double_helix", "label": "DNA", "description": "The cell's genome \u2014 a twisted ladder of base pairs (A\u00b7T, G\u00b7C). Somewhere in here is a gene we want to fix.", "color": "#3b82f6", "at": [50.0, 50.0], "span": [6.0, 94.0], "size": 1.0, "sequence": "GACTTGCCAG", "mutation_index": 4}, {"id": "cas9", "shape": "protein", "label": "Cas9 nuclease", "description": "A protein that acts like molecular scissors. On its own it does nothing useful \u2014 it must be told where to cut by a guide RNA.", "color": "#2563eb", "at": [14.0, 36.0], "size": 1.15}, {"id": "grna", "shape": "strand", "label": "guide RNA", "description": "A short RNA whose letters spell out the target. Cas9 cuts wherever these letters find their match in the DNA.", "color": "#ef4444", "at": [14.0, 24.0], "size": 0.9, "sequence": "CUGAACGGUC"}, {"id": "pam", "shape": "label", "label": "PAM (TGG)", "description": "A short 'NGG' code next to the target. Cas9 checks for it first \u2014 it's the unlock that lets Cas9 commit to cutting.", "color": "#a855f7", "at": [60.0, 62.0], "size": 0.8}], "events": [{"at": 0.0, "action": "appear", "actor": "dna", "dur": 1.2, "caption": "Inside every cell, DNA spells out genes in four letters: A, T, G, C."}, {"at": 2.0, "action": "highlight", "actor": "dna", "dur": 1.5, "at_x": 50.0, "mode": "mutation", "caption": "A single wrong letter here causes a genetic disease."}, {"at": 4.2, "action": "appear", "actor": "cas9", "dur": 1.0, "caption": "Cas9 is a protein \u2014 molecular scissors. But it needs an address."}, {"at": 4.5, "action": "appear", "actor": "grna", "dur": 1.0, "caption": "A guide RNA gives it one: its letters spell out the target."}, {"at": 6.0, "action": "move", "actor": "cas9", "dur": 2.0, "to": [50.0, 33.0], "caption": "The Cas9\u2013guide complex slides along the DNA, scanning."}, {"at": 6.0, "action": "move", "actor": "grna", "dur": 2.0, "to": [50.0, 22.0]}, {"at": 8.2, "action": "appear", "actor": "pam", "dur": 0.6, "caption": "First it finds a PAM \u2014 a short 'NGG' code that says 'cut near here'."}, {"at": 8.4, "action": "pulse", "actor": "cas9", "dur": 0.8}, {"at": 9.2, "action": "unwind", "actor": "dna", "dur": 1.6, "at_x": 50.0, "caption": "The DNA unzips so the guide can read the letters underneath."}, {"at": 11.0, "action": "hybridize", "actor": "grna", "dur": 2.4, "at_x": 50.0, "caption": "The guide's letters pair up with the DNA \u2014 A\u00b7U, G\u00b7C \u2014 base by base. THIS match is why Cas9 cuts here and nowhere else."}, {"at": 13.6, "action": "grip", "actor": "cas9", "dur": 1.0, "at_x": 50.0, "caption": "A perfect match snaps the scissors shut."}, {"at": 14.4, "action": "cut", "actor": "dna", "dur": 1.2, "at_x": 50.0, "caption": "Cas9 cleaves both strands \u2014 a clean double-strand break."}, {"at": 16.0, "action": "disappear", "actor": "cas9", "dur": 1.0, "caption": "Cas9 lets go."}, {"at": 16.0, "action": "disappear", "actor": "grna", "dur": 1.0}, {"at": 16.0, "action": "disappear", "actor": "pam", "dur": 1.0}, {"at": 17.2, "action": "repair", "actor": "dna", "dur": 2.6, "at_x": 50.0, "mode": "correct", "caption": "The cell repairs the break \u2014 and the wrong letter is now corrected."}], "camera": [{"at": 0.0, "center": [50.0, 50.0], "zoom": 1.0, "dur": 1.5}, {"at": 3.0, "center": [50.0, 46.0], "zoom": 1.08, "dur": 2.0}, {"at": 8.0, "center": [50.0, 46.0], "zoom": 1.55, "dur": 2.5}, {"at": 13.0, "center": [50.0, 48.0], "zoom": 1.65, "dur": 1.5}, {"at": 18.0, "center": [50.0, 50.0], "zoom": 1.0, "dur": 2.5}]};
+
+const host = document.getElementById('lattice-crispr');
+if (host) {
+  const stage = host.querySelector('.viz-stage');
+  const caption = host.querySelector('.viz-caption');
+  const duration = spec.duration || 16;
+  let last = null, t = 0;
+
+  function frame(now) {
+    if (last == null) last = now;
+    t += (now - last) / 1000;
+    last = now;
+    if (t > duration) t %= duration;
+    stage.innerHTML = renderFrameSVG(spec, t, { hideChrome: true });
+    const c = captionAt(spec, t);
+    caption.textContent = c.text;
+    caption.style.opacity = c.alpha;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
