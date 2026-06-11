@@ -5,8 +5,45 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Projects — Jenny Li</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Projects "space" theme (scoped to body.projects) ── */
+    body.projects {
+      background: radial-gradient(1100px 780px at 50% -12%, #0b1430 0%, #05060a 62%);
+      color: #d7e0f0;
+    }
+    #lattice-bg { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+
+    body.projects a { color: #8cc6ff; }
+    body.projects a:hover { color: #b6dbff; }
+    body.projects h1, body.projects h2, body.projects strong { color: #f2f6ff; }
+    body.projects .site-header h1 a { color: #f2f6ff; }
+    body.projects .tagline, body.projects .meta, body.projects .project .meta { color: #9fb0cf; }
+
+    body.projects nav a { color: #c7d2e6; }
+    body.projects nav a:hover { background: rgba(255,255,255,0.08); }
+    body.projects nav a.active { background: rgba(140,198,255,0.18); color: #cfe6ff; }
+
+    body.projects .container {
+      background: rgba(10, 14, 26, 0.55);
+      backdrop-filter: blur(14px) saturate(125%);
+      -webkit-backdrop-filter: blur(14px) saturate(125%);
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.5);
+      color: #d7e0f0;
+    }
+    body.projects .project {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: none;
+    }
+    body.projects .section-title { color: #e7eefb; }
+    body.projects .badge { background: rgba(140,198,255,0.16); color: #bfe0ff; }
+    body.projects ul li { color: #cfd8e8; }
+    body.projects hr { opacity: 1 !important; border: none; border-top: 1px solid rgba(255,255,255,0.12); }
+  </style>
 </head>
-<body>
+<body class="projects">
+  <div id="lattice-bg" aria-hidden="true"></div>
   <header class="site-header">
     <h1><a href="index.html">Jenny Li</a></h1>
     <nav>
@@ -150,6 +187,7 @@
       }
     }
   </script>
+  <script type="module" src="viz/lattice-bg.js"></script>
   <script type="module" src="viz/crispr.js"></script>
   <script type="module" src="viz/attractors.js"></script>
 </body>
