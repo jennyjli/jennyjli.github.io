@@ -31,7 +31,7 @@ if (host) {
 
   // Build an n×n×n grid of nodes. Sized wider than the 880px content column so
   // the lattice spills past the text cards and stays visible in both margins.
-  const n = 8, spacing = 140, half = ((n - 1) * spacing) / 2;
+  const n = 8, spacing = 200, half = ((n - 1) * spacing) / 2;
   const nodes = [];
   for (let i = 0; i < n; i++)
     for (let j = 0; j < n; j++)
